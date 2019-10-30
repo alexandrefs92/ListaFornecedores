@@ -26,7 +26,7 @@ namespace ListagemFornecedores.Services
         public FornecedorService(ListagemFornecedoresContext context)
         {
             _context = context;
-           // _repository = new Repository<Fornecedor>(_context);
+            _repository = new Repository<Fornecedor>(_context);
         }
 
         public void Delete<V>(int id) where V : AbstractValidator<Fornecedor>
