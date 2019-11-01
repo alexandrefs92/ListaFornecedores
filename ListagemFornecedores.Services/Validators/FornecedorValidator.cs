@@ -40,11 +40,6 @@ namespace ListagemFornecedores.Services.Validators
                  
         }
 
-        private bool MenorIdade(Fornecedor arg)
-        {
-            throw new NotImplementedException();
-        }
-
         private bool ValidarDocumento(string CpfCnpj)
         {
             string documentoFormatado = string.Join("", System.Text.RegularExpressions.Regex.Split(CpfCnpj, @"[^\d]"));
