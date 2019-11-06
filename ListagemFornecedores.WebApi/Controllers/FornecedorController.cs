@@ -11,6 +11,9 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace ListagemFornecedores.WebApi.Controllers
 {
+    /// <summary>
+    /// API para gestão do cadastro de fornecedores.
+    /// </summary>
     [Route("api/fornecedor")]
     [ApiController]
     public class FornecedorController : ControllerBase
@@ -20,6 +23,10 @@ namespace ListagemFornecedores.WebApi.Controllers
         {
             this.fornecedorService = fornecedorService;
         }
+        /// <summary>
+        /// Retorna lista de todos os fornecedores
+        /// </summary>
+        /// <returns>Lista dos fornecedores</returns>
         [HttpGet("GetAll")]
         public ActionResult<IEnumerable<Fornecedor>> Get()
         {
@@ -32,7 +39,11 @@ namespace ListagemFornecedores.WebApi.Controllers
 
             return Ok(result.ToArray());
         }
-
+        /// <summary>
+        ///  Retorna o fornecedor à partir do id
+        /// </summary>
+        /// <param name="id">Identificador do fornecedor</param>
+        /// <returns>Cadastro do forneccedor</returns>
         [HttpGet("{id}")]
         public ActionResult<FornecedorDTO> Get(int id)
         {
@@ -49,34 +60,49 @@ namespace ListagemFornecedores.WebApi.Controllers
             return Ok(fornecedorDTO);
         }
 
+        /// <summary>
+        /// Adicionar novos fornecedores
+        /// </summary>
+        /// <param name="fornecedor">Fornecedor a ser adicionado</param>
+        /// <returns>Informações do fornecedor para posterior consulta</returns>
         [HttpPost]
-        public ActionResult<Fornecedor> Post(Fornecedor value)
+        public ActionResult<Fornecedor> Post(Fornecedor fornecedor)
         {
             try
             {
-                fornecedorService.Post<FornecedorValidator>(value);
+                fornecedorService.Post<FornecedorValidator>(fornecedor);
             }
             catch (Exception e)
             {
                 return BadRequest(e.Message);
             }
-            return Ok(value);
+            return Ok(fornecedor);
         }
 
+        /// <summary>
+        /// Alterar o cadastro de um fornecedor
+        /// </summary>
+        /// <param name="fornecedor">Fornecedor a ser alterado</param>
+        /// <returns>Informações do fornecedor para posterior consulta</returns>
         [HttpPut]
-        public ActionResult<Fornecedor> Put(Fornecedor value)
+        public ActionResult<Fornecedor> Put(Fornecedor fornecedor)
         {
             try
             {
-                fornecedorService.Put<FornecedorValidator>(value);
+                fornecedorService.Put<FornecedorValidator>(fornecedor);
             }
             catch (Exception e)
             {
                 return BadRequest(e.Message);
             }
-            return Ok(value);
+            return Ok(fornecedor);
         }
 
+        /// <summary>
+        /// Excluir o cadastro do fornecedor
+        /// </summary>
+        /// <param name="id">Identificador do fornecedor</param>
+        /// <returns>Status da exclusão</returns>
         [HttpDelete("{id}")]
         public ActionResult Delete(int id)
         {

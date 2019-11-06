@@ -4,5 +4,62 @@
         <name>ListagemFornecedores.WebApi</name>
     </assembly>
     <members>
+        <member name="T:ListagemFornecedores.WebApi.Controllers.EmpresaController">
+            <summary>
+            API para consulta do cadastro de empresas
+            </summary>
+        </member>
+        <member name="M:ListagemFornecedores.WebApi.Controllers.EmpresaController.Get(System.Int32)">
+            <summary>
+             Retorna a empresa à partir do id
+            </summary>
+            <param name="id"></param>
+            <returns>Cadastro da empresa</returns>
+        </member>
+        <member name="M:ListagemFornecedores.WebApi.Controllers.EmpresaController.Get">
+            <summary>
+            Retorna lista de todos as empresas
+            </summary>
+            <returns>Lista de empresas</returns>
+        </member>
+        <member name="T:ListagemFornecedores.WebApi.Controllers.FornecedorController">
+            <summary>
+            API para gestão do cadastro de fornecedores.
+            </summary>
+        </member>
+        <member name="M:ListagemFornecedores.WebApi.Controllers.FornecedorController.Get">
+            <summary>
+            Retorna lista de todos os fornecedores
+            </summary>
+            <returns>Lista dos fornecedores</returns>
+        </member>
+        <member name="M:ListagemFornecedores.WebApi.Controllers.FornecedorController.Get(System.Int32)">
+            <summary>
+             Retorna o fornecedor à partir do id
+            </summary>
+            <param name="id">Identificador do fornecedor</param>
+            <returns>Cadastro do forneccedor</returns>
+        </member>
+        <member name="M:ListagemFornecedores.WebApi.Controllers.FornecedorController.Post(ListagemFornecedores.Domain.Entities.Fornecedor)">
+            <summary>
+            Adicionar novos fornecedores
+            </summary>
+            <param name="fornecedor">Fornecedor a ser adicionado</param>
+            <returns>Informações do fornecedor para posterior consulta</returns>
+        </member>
+        <member name="M:ListagemFornecedores.WebApi.Controllers.FornecedorController.Put(ListagemFornecedores.Domain.Entities.Fornecedor)">
+            <summary>
+            Alterar o cadastro de um fornecedor
+            </summary>
+            <param name="fornecedor">Fornecedor a ser alterado</param>
+            <returns>Informações do fornecedor para posterior consulta</returns>
+        </member>
+        <member name="M:ListagemFornecedores.WebApi.Controllers.FornecedorController.Delete(System.Int32)">
+            <summary>
+            Excluir o cadastro do fornecedor
+            </summary>
+            <param name="id">Identificador do fornecedor</param>
+            <returns>Status da exclusão</returns>
+        </member>
     </members>
 </doc>
