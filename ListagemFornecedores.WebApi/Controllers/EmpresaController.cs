@@ -20,9 +20,10 @@ namespace ListagemFornecedores.WebApi.Controllers
         {
             this.empresaService = empresaService;
         }
-        public ActionResult<string> Index()
+        [HttpDelete("{id}")]
+        public ActionResult<string> Get(int id)
         {
-            return "";
+            Empresa empresa = empresaService.Get(id);
         }
 
         [HttpGet("GetAll")]

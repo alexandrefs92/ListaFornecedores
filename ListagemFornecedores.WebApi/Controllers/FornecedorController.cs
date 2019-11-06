@@ -16,13 +16,6 @@ namespace ListagemFornecedores.WebApi.Controllers
     public class FornecedorController : ControllerBase
     {
         private readonly IFornecedorService fornecedorService;
-
-        [HttpGet]
-        public ActionResult<string> Index()
-        {
-            return "";
-        }
-
         public FornecedorController(IFornecedorService fornecedorService)
         {
             this.fornecedorService = fornecedorService;
