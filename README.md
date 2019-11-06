@@ -15,7 +15,8 @@
 
 #### - Swagger
 Adicionando Swagger
-![alt text](https://ibb.co/ygyqbJx)
+
+[![Swagger](https://i.ibb.co/bNBX8nG/swagger.png "Swagger")](https://i.ibb.co/bNBX8nG/swagger.png "Swagger")
 
 ## #  Contato
 E-mail: alexadrefelixsouza@gmail.com 
