@@ -29,7 +29,7 @@ namespace ListagemFornecedores.WebApi.Controllers
         /// </summary>
         /// <param name="id"></param>
         /// <returns>Cadastro da empresa</returns>
-        [HttpDelete("{id}")]
+        [HttpGet("{id}")]
         public ActionResult<Empresa> Get(int id)
         {
             Empresa empresa = empresaService.Get(id);
